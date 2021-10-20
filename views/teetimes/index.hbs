@@ -1,0 +1,15 @@
+<h1>TeeTimes</h1>
+<a href="/teetimes/create">Add a new TeeTime</a>
+
+<section class="row card-group">
+    {{#each artists}}
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-4 text-center h-100">
+                <div class="card-body">
+                    <h5> {{this.name}}</h5>
+                    <a href="/teetime/edit/{{thid._id}}" class="btn btn-info text-light">Edit</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</section>

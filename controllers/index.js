@@ -12,10 +12,10 @@ router.get('/homepage', function(req, res, next) {
 });
 
 //GET: /about
-router.get('/teetime', function(req, res, next) {
+router.get('/teetimes', function(req, res, next) {
   res.render('teetime',
       {title:'TeeTime',
-        content:'This is teetime'
+        content:'This is the teetime content'
 
       })
 })
