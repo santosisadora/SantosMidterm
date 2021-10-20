@@ -2,10 +2,10 @@
 let express = require ('express')
 
 //instantiate an express router to parse and direct url requests
-router = express.Router()
+let router = express.Router()
 
 //add model ref
-Teetime = require('../models/teetime')
+ Teetime = require('../models/teetime')
 
 router.get('/',(req,res) => {
     //use Artist model to fetch all documents from collection in mongodb
@@ -45,4 +45,26 @@ router.post('/teetimes/create',(req,res)=>{
         }
     })
 })
+
+// GET : teetimes/edit/something
+router.get('edit/:_id',(req,res)=>{
+    let _id = req.params._id
+
+    TeeTime.findById(_id,(err,teetime)=>{
+        if(err){
+            console.log(err)
+            res.end(err)
+        }
+        else{
+            res.render('teetimes/edit',{
+                title:'TeeTime details',
+                teetimes:teetime
+            })
+
+        }
+    })
+})
+
+
+//making it public
 module.exports = router

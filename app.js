@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./controllers/index');
 var usersRouter = require('./controllers/users');
-teetimesRouter = require('./controllers/teetimes');
+var teetimesRouter = require('./controllers/teetimes');
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/teetimes',teetimesRouter);
+app.use('/teetimes',teetimesRouter);
 
 //mongodb connection with mongoose
 mongoose = require('mongoose')
