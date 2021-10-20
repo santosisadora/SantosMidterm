@@ -9,7 +9,7 @@ let router = express.Router()
 
 router.get('/',(req,res) => {
     //use Artist model to fetch all documents from collection in mongodb
-    Teetime.find((err,teetimes) =>{
+    Teetime.find((err, teetimes) =>{
         if(err){
             console.log(err)
             res.end(err)
